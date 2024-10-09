@@ -1,0 +1,9 @@
+{
+  "cpfvalido": "08975801926",
+  "senhavalida": "Neo@8700",
+  "cpfinvalido": "12345897",
+  "senhainvalido": "senhainvalida",
+  
+
+  "body": "Fixtures are a great way to mock data for responses to routes"
+}
