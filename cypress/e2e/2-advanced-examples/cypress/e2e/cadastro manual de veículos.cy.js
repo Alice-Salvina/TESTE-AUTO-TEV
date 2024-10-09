@@ -23,6 +23,10 @@ describe('cadastro de usuário', () => {
 
   // Acessa a tela de cadastro manual de veículos 
     cy.visit('http://localhost:3000/atpve/veiculos');
+    it('deve permitir o login com credenciais válidas', () => {
+      // serve para monitorar quando essa requisição ocorre e inspecionar a resposta durante o teste.
+      cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
+  
 
     
 
@@ -39,10 +43,13 @@ const generateRandomData = () => {
   const cnpjComprador = faker.finance.creditCardNumber(); // CNPJ do comprador (simulando um número)
   const nomeComprador = faker.namecomprador.findName(); // Nome do comprador
   const emailComprador = faker.internet.email(nomeComprador); // Email do comprador
-  
-  
 
-  cy.get ('input[name=renavam]'). type(renavam);
-        
+  cy.get('input[name=renavam]').type(renavam);
+
+
+
+
+  
 }})
+  })
   });
