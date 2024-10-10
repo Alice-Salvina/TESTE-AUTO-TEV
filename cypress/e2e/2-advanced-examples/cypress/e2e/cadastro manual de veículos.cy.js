@@ -4,7 +4,7 @@ describe('cadastro de usuário', () => {
     //função executada antes de cada teste fazer o login
   beforeEach(() => {
     // Visita a página de login antes de cada teste
-    cy.visit('http://localhost:3000/login');
+    cy.visit('https://homologacao.tev.net.br/login');
   });
 
   it('deve permitir o login com credenciais válidas', () => {
@@ -13,7 +13,7 @@ describe('cadastro de usuário', () => {
 
     // Digita as credenciais de login e clica no botão de login
     cy.get('#socialId').type('07815571948'); // CPF fixo (pode ser substituído se necessário)
-    cy.get('#password').type('1234'); // Senha fixa (pode ser substituída)
+    cy.get('#password').type('Neo@8700'); // Senha fixa (pode ser substituída)
     cy.contains('button', 'Login').click();
 
     // Espera pela resposta da requisição de login
@@ -22,10 +22,10 @@ describe('cadastro de usuário', () => {
 
 
   // Acessa a tela de cadastro manual de veículos 
-    cy.visit('http://localhost:3000/atpve/veiculos');
+    cy.visit('https://homologacao.tev.net.br/atpve/veiculos');
     it('deve permitir o login com credenciais válidas', () => {
       // serve para monitorar quando essa requisição ocorre e inspecionar a resposta durante o teste.
-      cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
+      //cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
   
 
     
@@ -45,11 +45,28 @@ const generateRandomData = () => {
   const emailComprador = faker.internet.email(nomeComprador); // Email do comprador
 
   cy.get('input[name=renavam]').type(renavam);
-
+  cy.get('input[name="crv_number"]').type(numeroCRV);
+  cy.get('input[name="license_plate"]').type(placa);
+  cy.get('input[name="chassis"]').type
+  cy.get('input#outlined-basic').eq(3).type
+  cy.get('input[name="chassis"]').type
+cy.get('div.Mui-focused input')
+cy.get('input#outlined-basic').eq(3)
+cy.get('input[name="seller_name"]')
+cy.get('input[name="seller_email"]')
+cy.get('input[name="seller_phone"]')
 
 
 
   
+
+
+  
+  
+
+
+
+
 }})
   })
   });

@@ -48,6 +48,8 @@ describe('Página de Login', () => {
     const razaoSocial = faker.company.name(); // Gera um nome de empresa aleatório
     const nomeResponsavel = `${faker.name.firstName()} ${faker.name.lastName()}`; // Gera um nome completo aleatório
     const telefone = `${faker.number.int({ min: 10000000000, max: 99999999999 })}`; // Gera um número de telefone aleatório com até 11 dígitos
+    const cnpj = `${faker.number.int({ min: 1000000000000, max: 9999999999999 })}`; // Gera um número de telefone aleatório com até 14 dígitos
+
 
     // Preenche o campo CEP
     cy.get('input[name="zip_code"]').type('82820150');
@@ -57,7 +59,11 @@ describe('Página de Login', () => {
     cy.get('input[name="number"]').type('100');
 
     // Preenche o campo Razão Social com um valor aleatório
-    cy.get('input[name="company_name"]').type(razaoSocial);
+    cy.get('input[name="company_name"]').type(nomeResponsavel);
+
+    //Preenche o campo de CNPJ
+    cy.get('input[name="cnpj"]').type(cnpj);
+
 
     // Preenche o campo Valor taxa TEV com um valor fixo
     cy.get('input[name="rate_tev"]').type('10000');
@@ -80,6 +86,6 @@ describe('Página de Login', () => {
     //clica no botão adicionar o email de faturamento
     cy.get('.bg-amber-500').eq(2).click();
     //clica em ''salvar'' 
-    cy.get ('bg-green-600').click();
+      cy.get('button[type="submit"]').click();
   });
 });
