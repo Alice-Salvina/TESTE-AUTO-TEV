@@ -33,8 +33,8 @@ describe('Página de Login', () => {
     cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
 
     // Digita as credenciais de login e clica no botão de login
-    cy.get('#socialId').type('74726672002'); // CPF fixo
-    cy.get('#password').type('Neo@8700'); // Senha fixa
+    cy.get('#socialId').type('07815571948'); // CPF fixo
+    cy.get('#password').type('1234'); // Senha fixa
     cy.contains('button', 'Login').click();
 
     // Espera pela resposta da requisição de login

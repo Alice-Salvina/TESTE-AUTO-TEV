@@ -4,7 +4,7 @@ describe('cadastro de usuário', () => {
     //função executada antes de cada teste fazer o login
   beforeEach(() => {
     // Visita a página de login antes de cada teste
-    cy.visit('https://homologacao.tev.net.br/login');
+    cy.visit('http://localhost:3000/login');
   });
 
   it('deve permitir o login com credenciais válidas', () => {
@@ -13,7 +13,7 @@ describe('cadastro de usuário', () => {
 
     // Digita as credenciais de login e clica no botão de login
     cy.get('#socialId').type('07815571948'); // CPF fixo (pode ser substituído se necessário)
-    cy.get('#password').type('Neo@8700'); // Senha fixa (pode ser substituída)
+    cy.get('#password').type('1234'); // Senha fixa (pode ser substituída)
     cy.contains('button', 'Login').click();
 
     // Espera pela resposta da requisição de login
@@ -22,10 +22,10 @@ describe('cadastro de usuário', () => {
 
 
   // Acessa a tela de cadastro manual de veículos 
-    cy.visit('https://homologacao.tev.net.br/atpve/veiculos');
+    cy.visit('http://localhost:3000/atpve/veiculos');
     it('deve permitir o login com credenciais válidas', () => {
       // serve para monitorar quando essa requisição ocorre e inspecionar a resposta durante o teste.
-      //cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
+      cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
   
 
     
@@ -62,11 +62,11 @@ cy.get('input[name="seller_phone"]')
 
 
   
+
+
+
+
   
-
-
-
-
 }})
   })
   });
