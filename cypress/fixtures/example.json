@@ -1,0 +1,8 @@
+{
+  "cpfvalido": "08975801926",
+  "senhavalida": "Neo@8700",
+  "cpfinvalido": "12345897",
+  "senhainvalido": "senhainvalida",
+  "name": "Using fixtures to represent data",
+  "body": "Fixtures are a great way to mock data for responses to routes"
+}

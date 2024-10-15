@@ -15,10 +15,7 @@ describe('Página de Login', () => {
       }).then(response => {
         // O formato do e-mail gerado depende da resposta da API
         emailResponsavel = response.data.email; // A API deve retornar um campo "email"
-      }).catch(error => {
-        // Tratamento de erro
-        console.error('Erro ao obter e-mail temporário:', error);
-        throw new Error('Falha ao gerar e-mail temporário'); // Para parar a execução do teste
+      
       })
     );
   });
@@ -87,5 +84,6 @@ describe('Página de Login', () => {
     cy.get('.bg-amber-500').eq(2).click();
     //clica em ''salvar'' 
       cy.get('button[type="submit"]').click();
+
   });
 });

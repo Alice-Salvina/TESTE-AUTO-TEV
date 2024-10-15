@@ -12,7 +12,7 @@ describe('cadastro de usuário', () => {
     cy.intercept('POST', '/api/user/sign-in').as('loginRequest');
 
     // Digita as credenciais de login e clica no botão de login
-    cy.get('#socialId').type('74726672002'); // CPF fixo (pode ser substituído se necessário)
+    cy.get('#socialId').type('97848405028'); // CPF fixo (pode ser substituído se necessário)
     cy.get('#password').type('Neo@8700'); // Senha fixa (pode ser substituída)
     cy.contains('button', 'Login').click();
 
@@ -74,8 +74,9 @@ describe('cadastro de usuário', () => {
 
     // Clica no combobox e seleciona o perfil 'Master Alice financeiro'
     cy.get('input[role=combobox]').click();
-    cy.contains('Master Alice financeiro').click();
+    cy.get('li[role="option"]').eq(2) .click();
 
+   
     // Clica no botão salvar
     cy.get('button.bg-green-600').click();
   });
