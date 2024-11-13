@@ -7,7 +7,7 @@ module.exports = defineConfig({
   e2e: {
     viewportWidth: 1600, // Largura da janela
     viewportHeight: 1500, // Altura da janela
-    video:true,
+    video:false,
     setupNodeEvents(on, config) {
       // Implement node event listeners here
     },
